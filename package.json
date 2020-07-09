@@ -1,0 +1,31 @@
+{
+  "name": "travel-site",
+  "version": "1.0.0",
+  "description": "exercices git-webpack-modern-js",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "lodash": "^4.17.19",
+    "normalize.css": "^8.0.1",
+    "webpack-cli": "^3.3.12",
+    "webpack": "^4.43.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slone/travel-site.git"
+  },
+  "keywords": [
+    "exercice",
+    "training",
+    "formation"
+  ],
+  "author": "Guillaume Chantraine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slone/travel-site/issues"
+  },
+  "homepage": "https://github.com/slone/travel-site#readme"
+}
