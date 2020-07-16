@@ -42,4 +42,8 @@
 		}
 	}
 
+	&--hide-overflow {
+		overflow: hidden;
+	}
+
 }

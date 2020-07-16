@@ -10,7 +10,17 @@
 		background-color: rgba($mainBlue, .3);
 	}
 
+	.wrapper {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		position:relative;
+		padding: 0 0 .5em;
 
+		@mixin atMedium {
+			padding: .5em 0;
+		}
+	}
 
 	&__menu-content {
 		position: relative;
@@ -53,18 +63,6 @@
 			opacity $menuAnimationSpeed ease-in-out, 
 			transform $menuAnimationSpeed ease-in-out, 
 			top 0s linear;
-	}
-
-	.wrapper {
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
-		position:relative;
-		padding: 0 0 .5em;
-
-		@mixin atMedium {
-			padding: .5em 0;
-		}
 	}
 
 	&__logo {
