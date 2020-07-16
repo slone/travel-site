@@ -34,14 +34,15 @@
 		margin: 0;
 		width: 100%;
 		opacity: 0;
-		top: -100em;
+		left: -1000em;
 		transform: scale(1.2);
 		transition: 
 			opacity $menuAnimationSpeed ease-in-out, 
 			transform $menuAnimationSpeed ease-in-out, 
-			top 0s linear $menuAnimationSpeed;
+			left 0s linear $menuAnimationSpeed;
 
 		@mixin atMedium {
+			backdrop-filter: none;
 			position: static;
 			width: auto;
 			flex-direction: row;
@@ -58,7 +59,7 @@
 	.nav-open &__menu-content {
 		transform: scale(1);
 		opacity: 1;
-		top: 0;
+		left: 0;
 		transition: 
 			opacity $menuAnimationSpeed ease-in-out, 
 			transform $menuAnimationSpeed ease-in-out, 
