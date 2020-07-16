@@ -1,0 +1,150 @@
+.site-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	
+
+	@mixin atMedium {
+		background-color: rgba($mainBlue, .3);
+	}
+
+
+
+	&__menu-content {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-top: 6.25rem;
+		padding-bottom: .5rem;
+		background-color: rgba($mainBlue, .5);
+		backdrop-filter: blur(3px);
+		margin: 0;
+		width: 100%;
+		opacity: 0;
+		top: -100em;
+		transform: scale(1.2);
+		transition: 
+			opacity $menuAnimationSpeed ease-in-out, 
+			transform $menuAnimationSpeed ease-in-out, 
+			top 0s linear $menuAnimationSpeed;
+
+		@mixin atMedium {
+			position: static;
+			width: auto;
+			flex-direction: row;
+			justify-content: flex-end;
+			padding-top: 0;
+			opacity: 1;
+			background-color: transparent;
+			transition: none;
+			transform: scale(1);
+		}
+	}
+
+	.nav-open &__menu-content {
+		transform: scale(1);
+		opacity: 1;
+		top: 0;
+		transition: 
+			opacity $menuAnimationSpeed ease-in-out, 
+			transform $menuAnimationSpeed ease-in-out, 
+			top 0s linear;
+	}
+
+	.wrapper {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		position:relative;
+		padding: 0 0 .5em;
+
+		@mixin atMedium {
+			padding: .5em 0;
+		}
+	}
+
+	&__logo {
+		background-color: $mainBlue;
+		padding: .75rem 1.8rem;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		z-index: 700;
+		transform: translateX(-50%);
+
+		@mixin atMedium {
+			padding: 1.33rem 2rem;
+			left: 0;
+			transform: translateX(0);
+		}
+	}
+
+	&__btn-container {
+		text-align: center;
+		margin-bottom: .75rem;
+
+		@mixin atMedium {
+			order: 3;		
+			margin-bottom: 0;
+		}
+	}
+
+	&__menu-icon {
+		font-size: 2em;
+		width: 1em;
+		height: 1em;
+		cursor: pointer;
+		position: absolute;
+		top: .5rem;
+		right: .5rem;
+		z-index: 800;
+
+		.bar {
+			position: absolute;
+			width: 100%;
+			height: .125em;
+			background-color: white;
+			left: 0;
+			transition: all 150ms ease-in-out 150ms;
+		}
+
+		.bar.top {
+			transform-origin: top left;
+			top: .06125em;
+		}
+
+		.bar.middle {
+			top: .45em;
+			transform: translateX(0);
+		}
+
+		.bar.bottom {
+			bottom: .06125em;
+			transform-origin: bottom left;
+		}
+
+
+		@mixin atMedium {
+			display: none;
+		}
+	}
+
+}
+
+.nav-open .site-header__menu-icon {
+	.bar.top {
+		transform: rotate(45deg) scaleX(1.1);
+	}
+
+	.bar.middle {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+
+	.bar.bottom {
+		transform: rotate(-45deg) scaleX(1.1);
+	}
+}

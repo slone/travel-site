@@ -1,0 +1,11 @@
+.our-beginning {
+
+	&__our-founder img {
+		width: 100%;
+
+		@mixin atMedium {
+			width: auto;
+		}
+	}
+
+}
