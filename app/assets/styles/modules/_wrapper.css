@@ -46,4 +46,9 @@
 		overflow: hidden;
 	}
 
+	&--narrow {
+		width: 70%;
+		max-width: 470px;
+	}
+
 }

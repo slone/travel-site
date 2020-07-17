@@ -16,4 +16,6 @@
 @import "modules/_our-beginning";
 @import "modules/_feature-item";
 @import "modules/_testimonial";
-@import "modules/_reveal-item.css";
+@import "modules/_reveal-item";
+@import "modules/_modal";
+@import "modules/_social-icons"
