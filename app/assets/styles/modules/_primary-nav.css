@@ -34,6 +34,9 @@
 
 		@mixin atMedium {
 			padding: .75em 1em;
+			&.is-current-link {
+				color: #fabb69;
+			}
 		}
 	}
 

@@ -4,10 +4,15 @@
 	left: 0;
 	z-index: 100;
 	width: 100%;
-	
+	transition: background-color 700ms ease-in-out;
 
 	@mixin atMedium {
+		position: fixed;
 		background-color: rgba($mainBlue, .3);
+
+		&--dark {
+			background-color: rgba(23, 51, 72, .85);
+		}
 	}
 
 	.wrapper {
@@ -21,6 +26,11 @@
 			padding: .5em 0;
 		}
 	}
+
+	.wrapper--hide-overflow {
+		width: 100%;
+	}
+
 
 	&__menu-content {
 		position: relative;
@@ -74,11 +84,17 @@
 		left: 50%;
 		z-index: 700;
 		transform: translateX(-50%);
+		transform-origin: 0 0;
 
 		@mixin atMedium {
 			padding: 1.33rem 2rem;
 			left: 0;
 			transform: translateX(0);
+			transition: transform 400ms ease-in-out;
+
+			.site-header--dark & {
+				transform: scale(.548);
+			}
 		}
 	}
 
