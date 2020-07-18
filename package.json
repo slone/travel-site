@@ -27,6 +27,7 @@
     "postcss-nested": "^4.2.2",
     "postcss-simple-vars": "^5.0.2",
     "style-loader": "^1.2.1",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
