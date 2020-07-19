@@ -3,7 +3,7 @@ import Axios from "axios";
 class ClientArea {
 	constructor(formElem) {
 		this.injectHTML();
-		this.form = formElem;
+		this.form = document.querySelector(".client-area__form");
 		this.field = this.form.querySelector(".client-area__input");
 		this.contentArea = document.querySelect(".client-area__content-area");
 		this.events();

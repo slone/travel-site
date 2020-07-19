@@ -7,7 +7,7 @@ import ClientArea from "./modules/ClientArea";
 
 new StickyHeader();
 new MobileMenu();
-new ClientArea(document.querySelector(".client-area__form"));
+new ClientArea();
 let revealFeaturesOnScroll = new RevealOnScroll(document.querySelectorAll(".feature-item"), 68);
 let revealTestimonialsOnScroll = new RevealOnScroll(document.querySelectorAll(".testimonial"), 75);
 
