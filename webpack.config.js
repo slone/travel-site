@@ -1,10 +1,10 @@
 const currentTask = process.env.npm_lifecycle_event;
 const path = require('path');
-
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); 
 const fse = require('fs-extra');
+
 
 const postCSSPlugins = [
 	require('postcss-import'),
@@ -47,7 +47,17 @@ let config = {
 	plugins: pages,
 	module: {
 		rules: [
-			cssConfig
+			cssConfig,
+			{
+				test: /\.js$/,
+				exclude: /(node_modules)/,
+				use: {
+					loader: 'babel-loader', 
+					options: {
+						presets: ['@babel/preset-react', '@babel/preset-env']
+					}
+				}
+			}
 		]
 	},
 };
@@ -73,16 +83,6 @@ if (currentTask === 'dev') {
 }
 
 if (currentTask === "prod") {
-	config.module.rules.push({
-		test: /\.js$/,
-		exclude: /(node_modules)/,
-		use: {
-			loader: 'babel-loader', 
-			options: {
-				presets: ['@babel/preset-env']
-			}
-		}
-	});
 	cssConfig.use.unshift(MiniCssExtractPlugin.loader);
 
 	postCSSPlugins.push(require('cssnano'));
