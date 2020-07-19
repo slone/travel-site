@@ -3,9 +3,11 @@ import "lazysizes";
 import MobileMenu from "./modules/MobileMenu";
 import RevealOnScroll from "./modules/RevealOnScroll";
 import StickyHeader from "./modules/StickyHeader";
+import ClientArea from "./modules/ClientArea";
 
 new StickyHeader();
 new MobileMenu();
+new ClientArea(document.querySelector(".client-area__form"));
 let revealFeaturesOnScroll = new RevealOnScroll(document.querySelectorAll(".feature-item"), 68);
 let revealTestimonialsOnScroll = new RevealOnScroll(document.querySelectorAll(".testimonial"), 75);
 

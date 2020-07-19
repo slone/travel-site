@@ -1,0 +1,22 @@
+.client-area {
+	padding: 2em;
+
+	&__form {
+		display: flex;
+	}
+
+	&__input {
+		flex: 1;
+		padding: .75em 1em;
+		border: 1px solid $mainOrange;
+		border-right: 0;
+	}
+
+	& button {
+		border: 0;
+	}
+
+	&__error {
+		color: red;
+	}
+}
